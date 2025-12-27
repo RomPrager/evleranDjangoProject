@@ -6,7 +6,7 @@ class Promotion(models.Model):
     description = models.CharField(max_length=255)
     discount = models.FloatField()
 
-class Product(models.model):
+class Product(models.Model):
     sku = models.CharField(max_length=10, primary_key=True)
     title = models.CharField(max_length=50)
     description = models.TextField()
@@ -26,7 +26,7 @@ class Customer(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=254, unique=True)
-    phone = models.PhoneNumberField()
+    phone = models.IntegerField()
     birth_date = models.DateField(null=True)
     membership = models.CharField(max_length=1, choices=MEMBERSHIP_CHOICES ,default=MEMBERSHIP_BRONZE)
     
